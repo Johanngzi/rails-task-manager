@@ -15,7 +15,17 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.save
     # No need for app/views/restaurants/create.html.erb
-    redirect_to show_path(@task)
+    redirect_to tasks_path(@task)
+  end
+
+  def edit
+    # @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(task_params)
+    redirect_to tasks_path(@task)
   end
 
   private
@@ -23,5 +33,6 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :details)
   end
+
 
 end

@@ -3,4 +3,7 @@
 <h2><%= @task.title %></h2>
 <p><%= @task.details %></p>
 <p><%= @task.completed %></p>
-<%# <p><%= link_to "Back to the list" task_path(tasks) %>
+
+<%= link_to "⟲ Back to the list", tasks_path %>
+
+<%= link_to "Edit this task", tasks_path %>
